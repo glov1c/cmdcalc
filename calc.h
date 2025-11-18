@@ -1,5 +1,6 @@
 #pragma once
 
-char* demux(int *arr, int key);
-int isnum(char *s);
+char* Demux(int *arr, int key);
+int isNum(char *s);
 int isValidOperation(char *s);
+int Calculate(int a, char *s, int b);
