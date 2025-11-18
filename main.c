@@ -2,10 +2,16 @@
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
+#include <locale.h>
 
 #include "calc.h"
 
 int main(int argc, char** argv) {
+    setlocale(LC_ALL, "RU");
+    
+    if (argc < 4){
+        printf("invalid arguments: not enough\n");
+    }
     if (strcmp(argv[argc-2], "-k") != 0) {
         printf("invalid arguments: no flag or key\n");
         return 1;
@@ -42,8 +48,20 @@ int main(int argc, char** argv) {
     }
     
     for(int i = 1; i < resCount+1; i++){
-        printf("%d: %d\n", i, res[i-1]);
+        printf("Ответ %d: %d\n", i, res[i-1]);
     }
+    if (isNum(argv[argc-1])){
+        printf("Результирующая строка: ");
+        for(int i = 0; i < resCount; i++){
+            printf("%c", res[i]-atoi(argv[argc-1]));
+        }
+        printf("\n");
+    }
+    else{
+        printf("invalid arguments: flag is not a number\n");
+        return 1;
+    }
+    
 
     free(res);
     return 0;
