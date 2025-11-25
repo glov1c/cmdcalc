@@ -7,7 +7,7 @@
 
 
 int isNum(char* s){
-    for(int i = 0; i < strlen(s); i++){
+    for(size_t i = 0; i < strlen(s); i++){
         if (!isdigit(s[i])){
             if (i == 0 && s[0] != '-'){
                 return 0;
