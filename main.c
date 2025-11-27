@@ -11,17 +11,13 @@ int main(int argc, char** argv) {
     
     if (argc < 5){
         printf("invalid arguments: not enough\n");
+        return 1;
     }
     if (strcmp(argv[argc-2], "-k") != 0) {
         printf("invalid arguments: no flag or key\n");
         return 1;
     }
 
-    /*
-    for (int i = 0; i < argc; i++) {  
-        printf("%s \n", argv[i]);  
-    }
-    */
     int resCount = (argc-2) / 3;
 
     int* res = (int*)calloc(resCount, sizeof(int));

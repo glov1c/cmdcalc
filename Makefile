@@ -1,4 +1,4 @@
-.PHONY = run clean
+.PHONY: run clean
 
 CFLAGS = -Wall -Wextra
 ARGS = 51 + 51 -k 2
@@ -17,4 +17,3 @@ run: cmdcalc
 
 clean: 
 	rm -f *.o cmdcalc
-
